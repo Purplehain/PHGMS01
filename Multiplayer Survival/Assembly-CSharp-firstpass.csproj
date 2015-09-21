@@ -242,14 +242,14 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
- <Reference Include="KDTree">
- <HintPath>A:/Unity Projects/PHGMS01/Multiplayer Survival/Assets/ProCore/Prototype/Classes/ClassesLib/KDTree.dll</HintPath>
- </Reference>
  <Reference Include="ProBuilderCore-Unity5">
  <HintPath>A:/Unity Projects/PHGMS01/Multiplayer Survival/Assets/ProCore/Prototype/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity5">
  <HintPath>A:/Unity Projects/PHGMS01/Multiplayer Survival/Assets/ProCore/Prototype/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="KDTree">
+ <HintPath>A:/Unity Projects/PHGMS01/Multiplayer Survival/Assets/ProCore/Prototype/Classes/ClassesLib/KDTree.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
