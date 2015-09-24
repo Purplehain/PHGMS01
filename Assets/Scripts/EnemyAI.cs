@@ -18,13 +18,13 @@ public class EnemyAI : SimpleAI {
 	// Use this for initialization
 	void Start () {
 
-        target = null;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         
-        RoamAround(Random.Range(5,20));
+        RoamAround(Random.Range(5,30));
 	}
 
     public void Patrol() {
@@ -47,13 +47,19 @@ public class EnemyAI : SimpleAI {
     public void Attack( ) {
 
     }
-
+	Vector3 cachedPos;
+	float roamIdleCnt = 0;
     public void RoamAround(float radius) {
-        if(ReachedTarget( transform.position , roamTargetPos ) ) {
+		if(cachedPos==transform.position){
+			roamIdleCnt += Time.deltaTime;
+		}
+
+        if(roamIdleCnt > 1 || ReachedTarget( transform.position , roamTargetPos ) ) {
             target = null;
+			roamIdleCnt = 0;
         }
         if ( target == null) {
-            Debug.Log( "Roaming around "+roamTargetPos );
+            //Debug.Log( "Roaming around "+roamTargetPos );
             
             Vector3 rndTarget = new Vector3(transform.position.x + Random.Range(-radius,radius), transform.position.y, transform.position.z + Random.Range(-radius,radius));
             RaycastHit hit = new RaycastHit();
@@ -77,10 +83,11 @@ public class EnemyAI : SimpleAI {
                 
             }
         }
+		cachedPos = transform.position;
     }
     
     public bool ReachedTarget(Vector3 origin, Vector3 tar) {
-        if(origin == tar) {
+        if(Vector3.Distance(origin, tar) <= .75f) {
             return true;
         }
         else return false; 

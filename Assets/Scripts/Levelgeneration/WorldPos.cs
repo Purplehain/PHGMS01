@@ -1,19 +1,34 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class WorldPos : MonoBehaviour
+[Serializable]
+public struct WorldPos
 {
+	public int x, y, z;
 
-	// Use this for initialization
-	void Start ()
+	public WorldPos(int x, int y, int z)
 	{
-	
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	public override bool Equals(object obj)
 	{
-	
+		if(!(obj is WorldPos))
+			return false;
+
+		WorldPos pos = (WorldPos)obj;
+		if (pos.x != x || pos.y != y || pos.z != z)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
+
 }
 
