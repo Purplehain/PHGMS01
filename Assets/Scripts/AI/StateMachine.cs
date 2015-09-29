@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAI : SimpleAI {
+public class StateMachine : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
